@@ -17,7 +17,7 @@ Python logging.Logger manager
 - add and store for use formatters, handlers, and loggers
 - set logger level
 - access logging.logger
-- easy to follow example script
+- easy to follow example script (see [github](https://github.com/a1publishing/a1_loggermanager) repo)
 
 ## Usage
 
