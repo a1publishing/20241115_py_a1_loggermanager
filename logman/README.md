@@ -29,6 +29,64 @@ Python logging.Logger manager
 2024-11-15 14:50:18 INFO my_logger.py: Created `logger_manager` and `logger`
 ```
 
+### add new logger
+```
+>>> my_logger_parms = ({
+...   'name': 'logger2',
+...     'handler_names': ('default_streamhandler',)
+...     })
+>>> logger_manager.add_my_logger(my_logger_parms)
+MyLogger(name='logger2', handlers={}, logger=<Logger logger2 (WARNING)>)
+>>> logger2 = logger_manager.get_my_logger('logger2')
+>>> logger2.info('Created `logger2`?')
+>>> logger2.set_level('info')
+>>> logger2.info('Created `logger2`!')
+2024-11-15 15:10:27 INFO my_logger.py: Created `logger2`!
+```
+
+### add a file handler logger and a combined console and file handler logger
+#### set and add a file handler configuration
+```
+myh = (
+  { 'name': 'default_filehandler',
+    'formatter_name': 'default_format',
+    'handler_type': 'FileHandler',
+    'parms': {
+      'filepath': filepath,
+      'encoding': "utf-8",
+      'mode': "a"
+    }
+  },
+)
+logger_manager.add_my_handlers(myh)
+
+```
+#### set and add a couple of logger configurations with the file handler config
+```
+myl = (
+  { 'name': 'file_logger',
+    'level': 'info',
+    'handler_names': ('default_filehandler',),
+  },
+  { 'name': 'console_and_file_logger',
+    'level': 'info',
+    'handler_names': ('default_streamhandler', 'default_filehandler'),
+  }
+)
+logger_manager.add_my_loggers(myl)
+```
+#### get the file handler logger and log an entry
+```
+file_logger = logger_manager.get_my_logger('file_logger')
+file_logger.info('Created `file_logger`')
+```
+#### get the combined console and file handler logger and log an entry
+```
+console_file_logger = logger_manager.get_my_logger('console_and_file_logger')
+console_file_logger.info('Created `console_file_logger`')
+```
+
+
 ## FAQ
 
 #### Is this package developed primarily for creator use?

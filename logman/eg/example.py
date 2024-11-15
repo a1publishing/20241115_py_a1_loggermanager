@@ -80,7 +80,7 @@ myh = (
   },
 )
 logger_manager.add_my_handlers(myh)
-    # set and add a couple of logger configuration with the file handler config
+    # set and add a couple of logger configurations with the file handler config
 myl = (
   { 'name': 'file_logger',
     'level': 'info',
