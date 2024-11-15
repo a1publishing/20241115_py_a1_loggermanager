@@ -101,7 +101,54 @@ file_logger.info('Created `file_logger`')
 console_file_logger = logger_manager.get_my_logger('console_and_file_logger')
 console_file_logger.info('Created `console_file_logger`')
 
-## various filtering examples
+# add a rotating file handler and a timed rotating file handler
+handlers = (
+  { 'name': 'rf1',
+    'handler_type': 'RotatingFileHandler',
+    'parms': {
+      'filepath': Path(f"{args.path}/rf_logger_{ymd}.log"),
+      'maxBytes': 400,
+      'backupCount': 2
+    }
+  }, 
+  { 'name': 'tf1',
+    'handler_type': 'TimedRotatingFileHandler',
+    'parms': {
+      'filepath': Path(f"{args.path}/trf_logger_{ymd}.log"),
+      'backupCount': 2,
+      #'atTime': datetime.time,
+      'backupCount': 2,
+      'interval': 30,
+      'when': 'S'
+    }
+  }
+)
+loggers = (
+  { 'name': 'rotating_file_1',
+    'handler_names': ('rf1',),
+    'level': 'info'
+  }, {
+    'name': 'timed_rotating_file_1',
+    'handler_names': ('tf1',),
+    'level': 'info',
+})
+logger_manager.add_my_handlers(handlers)
+logger_manager.add_my_loggers(loggers)
+
+# get the loggers and log entries
+rf_logger = logger_manager.get_my_logger('rotating_file_1')
+str = 'Created `rotating_file_1`'
+rf_logger.info(str)
+logger.info(str)
+'Created `timed_rotating_file_1`'
+rf_logger = logger_manager.get_my_logger('timed_rotating_file_1')
+rf_logger.info(str)
+logger.info(str)
+
+
+### accessing logging.logger, eg;
+
+# various filtering examples
   # filter out all but debug messages
 logger2.logger.addFilter(filter_debug) 
 logger2.logger.debug("debug1")

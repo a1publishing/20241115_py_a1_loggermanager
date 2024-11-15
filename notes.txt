@@ -2,5 +2,10 @@
 
 #
 $lom = 'H:\dev\_env\py\dev\20241115_logman'
+$loml = "$lom\logman"
 $lom_repo = 'S:\repo\users\michaelf\dev\py\pkg\logman'
-cd $lom
+cd $loml
+
+#
+python eg\example.py
+python eg\example.py --path D:\tmp\log  --debug
