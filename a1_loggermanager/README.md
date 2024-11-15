@@ -23,27 +23,27 @@ Python logging.Logger manager
 
 ### Get a logger
 ```
->>> import a1_loggermanager
->>> logger_manager = a1_loggermanager.get_logger_manager()
->>> logger = logger_manager.get_my_logger('default_console_logger')
->>> logger.info('Created `logger_manager` and `logger`')
-2024-11-15 14:50:18 INFO my_logger.py: Created `logger_manager` and `logger`
+import a1_loggermanager
+logger_manager = a1_loggermanager.get_logger_manager()
+logger = logger_manager.get_my_logger('default_console_logger')
+logger.info('Created `logger_manager` and `logger`')
 ```
+2024-11-15 14:50:18 INFO my_logger.py: Created `logger_manager` and `logger`
 
 ### add new logger
 ```
->>> my_logger_parms = ({
+my_logger_parms = ({
 ...   'name': 'logger2',
 ...     'handler_names': ('default_streamhandler',)
 ...     })
->>> logger_manager.add_my_logger(my_logger_parms)
+logger_manager.add_my_logger(my_logger_parms)
 MyLogger(name='logger2', handlers={}, logger=<Logger logger2 (WARNING)>)
->>> logger2 = logger_manager.get_my_logger('logger2')
->>> logger2.info('Created `logger2`?')
->>> logger2.set_level('info')
->>> logger2.info('Created `logger2`!')
-2024-11-15 15:10:27 INFO my_logger.py: Created `logger2`!
+logger2 = logger_manager.get_my_logger('logger2')
+logger2.info('Created `logger2`?')
+logger2.set_level('info')
+logger2.info('Created `logger2`!')
 ```
+2024-11-15 15:10:27 INFO my_logger.py: Created `logger2`!
 
 ### add a file handler logger and a combined console and file handler logger
 #### set and add a file handler configuration

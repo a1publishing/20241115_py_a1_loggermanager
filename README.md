@@ -1,3 +1,3 @@
-# a1logman
+# a1_loggermanager
 
-	[a1logman/README](https://github.com/a1publishing/a1logman/blob/master/a1logman/README.md)
+	[a1_loggermanager/README](https://github.com/a1publishing/a1_loggermanager/blob/master/a1_loggermanager/README.md)
