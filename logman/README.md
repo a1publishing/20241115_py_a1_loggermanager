@@ -17,6 +17,7 @@ Python logging.Logger manager
 - add and store for use formatters, handlers, and loggers
 - set logger level
 - access logging.logger
+- easy to follow example script
 
 ## Usage
 
@@ -85,7 +86,10 @@ file_logger.info('Created `file_logger`')
 console_file_logger = logger_manager.get_my_logger('console_and_file_logger')
 console_file_logger.info('Created `console_file_logger`')
 ```
-
+### accessing logging.logger, eg;
+```
+logger2.logger.addFilter(filter_debug) 
+```
 
 ## FAQ
 
