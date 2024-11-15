@@ -1,2 +1,6 @@
 2024-11-15 12:04:32 INFO my_logger.py: Created `file_logger`
 2024-11-15 12:04:32 INFO my_logger.py: Created `console_file_logger`
+2024-11-15 12:10:05 INFO my_logger.py: Created `file_logger`
+2024-11-15 12:10:05 INFO my_logger.py: Created `console_file_logger`
+2024-11-15 12:10:52 INFO my_logger.py: Created `file_logger`
+2024-11-15 12:10:52 INFO my_logger.py: Created `console_file_logger`

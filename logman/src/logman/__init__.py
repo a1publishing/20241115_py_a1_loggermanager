@@ -1,4 +1,4 @@
-from . import logger_manager 
+from logman import logger_manager 
 
 
 ### functions

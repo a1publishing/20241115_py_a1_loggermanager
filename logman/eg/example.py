@@ -3,8 +3,8 @@ import datetime
 import os
 from pathlib import Path
 
-import sys
-sys.path.insert(0, "H:/dev/_env/py/dev/20241115_logman/logman/src")
+#import sys
+#sys.path.insert(0, "H:/dev/_env/py/dev/20241115_logman/logman/src")
 import logman 
 
 ### functions
