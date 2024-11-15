@@ -1,4 +1,4 @@
-# logman
+# a1logman
 
 Python logging.Logger manager
 
@@ -23,8 +23,8 @@ Python logging.Logger manager
 
 ### Get a logger
 ```
->>> import logman
->>> logger_manager = logman.get_logger_manager()
+>>> import a1logman
+>>> logger_manager = a1logman.get_logger_manager()
 >>> logger = logger_manager.get_my_logger('default_console_logger')
 >>> logger.info('Created `logger_manager` and `logger`')
 2024-11-15 14:50:18 INFO my_logger.py: Created `logger_manager` and `logger`

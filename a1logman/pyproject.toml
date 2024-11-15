@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "logman"
+name = "a1logman"
 version = "0.1.0"
 description = ""
 authors = ["a1p <mike@a1publishing.com>"]
 readme = "README.md"
-packages = [{include = "logman", from = "src"}]
+packages = [{include = "a1logman", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.13"

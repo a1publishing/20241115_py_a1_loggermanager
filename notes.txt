@@ -1,9 +1,9 @@
 
 
 #
-$lom = 'H:\dev\_env\py\dev\20241115_logman'
-$loml = "$lom\logman"
-$lom_repo = 'S:\repo\users\michaelf\dev\py\pkg\logman'
+$lom = 'H:\dev\_env\py\dev\20241115_a1logman'
+$loml = "$lom\a1logman"
+$lom_repo = 'S:\repo\users\michaelf\dev\py\pkg\a1logman'
 cd $loml
 
 #

@@ -3,9 +3,9 @@ import datetime
 import os
 from pathlib import Path
 
-#import sys
-#sys.path.insert(0, "H:/dev/_env/py/dev/20241115_logman/logman/src")
-import logman 
+import sys
+sys.path.insert(0, "H:/dev/_env/py/dev/20241115_a1logman/a1logman/src")
+import a1logman 
 
 ### functions
 
@@ -32,7 +32,7 @@ def filter_out(record):
 ###
 
 # get default logger
-logger_manager = logman.get_logger_manager()
+logger_manager = a1logman.get_logger_manager()
 logger = logger_manager.get_my_logger('default_console_logger')
 logger.info('Created `logger_manager` and `logger`')
 

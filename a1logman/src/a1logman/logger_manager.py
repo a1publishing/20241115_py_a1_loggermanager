@@ -1,6 +1,6 @@
 import logging
-from logman import my_logger, my_formatter
-from logman.handlers import my_file_handler, my_rotating_file_handler, my_stream_handler, my_timed_rotating_file_handler
+from a1logman import my_logger, my_formatter
+from a1logman.handlers import my_file_handler, my_rotating_file_handler, my_stream_handler, my_timed_rotating_file_handler
 
 class LoggerManager:
 
