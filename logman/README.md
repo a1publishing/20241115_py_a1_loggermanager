@@ -6,103 +6,35 @@ Python logging.Logger manager
 
 - [Features](#features)
 - [Usage](#usage)
-  - [Initial setup](#initial-setup)
-  - [Creating releases](#creating-releases)
-- [Projects using this template](#projects-using-this-template)
+  
+  
 - [FAQ](#faq)
 - [Contributing](#contributing)
 
 ## Features
 
 - get default logger
-- add new logger
-- set logger2 level to debug if req'd
 - add and store for use formatters, handlers, and loggers
+- set logger level
 - access logging.logger
-
-
-
-
 
 ## Usage
 
-### Initial setup
-
-1. [Create a new repository](https://github.com/allenai/python-package-template/generate) from this template with the desired name of your project.
-
-    *Your project name (i.e. the name of the repository) and the name of the corresponding Python package don't necessarily need to match, but you might want to check on [PyPI](https://pypi.org/) first to see if the package name you want is already taken.*
-
-2. Create a Python 3.8 or newer virtual environment.
-
-    *If you're not sure how to create a suitable Python environment, the easiest way is using [Miniconda](https://docs.conda.io/en/latest/miniconda.html). On a Mac, for example, you can install Miniconda using [Homebrew](https://brew.sh/):*
-
-    ```
-    brew install miniconda
-    ```
-
-    *Then you can create and activate a new Python environment by running:*
-
-    ```
-    conda create -n my-package python=3.9
-    conda activate my-package
-    ```
-
-3. Now that you have a suitable Python environment, you're ready to personalize this repository. Just run:
-
-    ```
-    pip install -r setup-requirements.txt
-    python scripts/personalize.py
-    ```
-
-    And then follow the prompts.
-
-    :pencil: *NOTE: This script will overwrite the README in your repository.*
-
-4. Commit and push your changes, then make sure all GitHub Actions jobs pass.
-
-5. (Optional) If you plan on publishing your package to PyPI, add repository secrets for `PYPI_USERNAME` and `PYPI_PASSWORD`. To add these, go to "Settings" > "Secrets" > "Actions", and then click "New repository secret".
-
-    *If you don't have PyPI account yet, you can [create one for free](https://pypi.org/account/register/).*
-
-6. (Optional) If you want to deploy your API docs to [readthedocs.org](https://readthedocs.org), go to the [readthedocs dashboard](https://readthedocs.org/dashboard/import/?) and import your new project.
-
-    Then click on the "Admin" button, navigate to "Automation Rules" in the sidebar, click "Add Rule", and then enter the following fields:
-
-    - **Description:** Publish new versions from tags
-    - **Match:** Custom Match
-    - **Custom match:** v[vV]
-    - **Version:** Tag
-    - **Action:** Activate version
-
-    Then hit "Save".
-
-    *After your first release, the docs will automatically be published to [your-project-name.readthedocs.io](https://your-project-name.readthedocs.io/).*
-
-### Creating releases
-
-Creating new GitHub and PyPI releases is easy. The GitHub Actions workflow that comes with this repository will handle all of that for you.
-All you need to do is follow the instructions in [RELEASE_PROCESS.md](./RELEASE_PROCESS.md).
-
-## Projects using this template
-
-Here is an incomplete list of some projects that started off with this template:
-
-- [ai2-tango](https://github.com/allenai/tango)
-- [cached-path](https://github.com/allenai/cached_path)
-- [beaker-py](https://github.com/allenai/beaker-py)
-- [gantry](https://github.com/allenai/beaker-gantry)
-- [ip-bot](https://github.com/abe-101/ip-bot)
-- [atty](https://github.com/mstuttgart/atty)
-
-☝️ *Want your work featured here? Just open a pull request that adds the link.*
+### Get a logger
+```
+>>> import logman
+>>> logger_manager = logman.get_logger_manager()
+>>> logger = logger_manager.get_my_logger('default_console_logger')
+>>> logger.info('Created `logger_manager` and `logger`')
+2024-11-15 14:50:18 INFO my_logger.py: Created `logger_manager` and `logger`
+```
 
 ## FAQ
 
-#### Should I use this template even if I don't want to publish my package?
+#### Is this package developed primarily for creator use?
 
-Absolutely! If you don't want to publish your package, just delete the `docs/` directory and the `release` job in [`.github/workflows/main.yml`](https://github.com/allenai/python-package-template/blob/main/.github/workflows/main.yml).
+Yes!  It's a first package published to https://pypi.org/ and as much a learning tool as anything.  That said the logger manager should be useful as a starting point for any similar project or just to avoid getting caught up in logging.Logger docs.  Use it to easily create loggers.
 
 ## Contributing
 
-If you find a bug :bug:, please open a [bug report](https://github.com/allenai/python-package-template/issues/new?assignees=&labels=bug&template=bug_report.md&title=).
-If you have an idea for an improvement or new feature :rocket:, please open a [feature request](https://github.com/allenai/python-package-template/issues/new?assignees=&labels=Feature+request&template=feature_request.md&title=).
+If you find a bug :bug:, have a suggestion :rocket:, etc., please let me know (<mike@a1publishing.com>)
