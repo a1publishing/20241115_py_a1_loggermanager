@@ -44,23 +44,12 @@ class LoggerManager:
     for my_formatter in my_formatters:
       self.add_my_formatter(my_formatter)
 
-  
-  
   def add_my_handler(self, my_handler):
-  #def add_my_handler(self, my_handler, filepath = None):
-
-    #filepath = my_handler['parms']['filepath'] if filepath is None else filepath
-
     try:
-      #handler_type = my_handler.get('handler_type', 'StreamHandler')  
       handler_type = my_handler.get('handler_type', self.DEFAULT_HANDLER_TYPE)  
       match handler_type:
         case 'FileHandler':
-
           self.my_handlers[my_handler['name']] = my_file_handler.MyFileHandler(my_handler['name'], my_handler['parms']['filepath'], my_handler.get('parms', {}))
-          #self.my_handlers[my_handler['name']] = my_file_handler.MyFileHandler(my_handler['name'], filepath, my_handler.get('parms', {}))
-
-
         case 'RotatingFileHandler':
           self.my_handlers[my_handler['name']] = my_rotating_file_handler.MyRotatingFileHandler(my_handler['name'], my_handler['parms']['filepath'], my_handler.get('parms', {}))
         case 'StreamHandler':
