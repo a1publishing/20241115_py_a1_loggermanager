@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "a1_loggermanager"
-version = "0.1.0"
+version = "0.1.00.post1"
 description = ""
 authors = ["a1p <mike@a1publishing.com>"]
 readme = "README.md"
