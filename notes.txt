@@ -1,0 +1,6 @@
+
+
+#
+$lom = 'H:\dev\_env\py\dev\20241115_logman'
+$lom_repo = 'S:\repo\users\michaelf\dev\py\pkg\logman'
+cd $lom
