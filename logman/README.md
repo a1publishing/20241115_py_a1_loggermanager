@@ -95,8 +95,8 @@ logger2.logger.addFilter(filter_debug)
 
 #### Is this package developed primarily for creator use?
 
-Yes!  It's a first package published to https://pypi.org/ and as much a learning tool as anything.  That said the logger manager should be useful as a starting point for any similar project or just to avoid getting caught up in logging.Logger docs.  Use it to easily create loggers.
+Yes, it's a first package published to https://pypi.org/ and as much a learning tool as anything.  That said the logger manager should be useful as a starting point for any similar project or just to avoid getting caught up in logging.Logger docs.  Use it to easily create and manage loggers.
 
 ## Contributing
 
-If you find a bug :bug:, have a suggestion :rocket:, etc., please let me know (<mike@a1publishing.com>)
+If you find a bug :bug:, have a suggestion :rocket:, etc., please let me know (<mike@a1publishing.com>:)
