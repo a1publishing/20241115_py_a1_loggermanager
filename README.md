@@ -1,5 +1,3 @@
 # logman
 
-	[logman/README](logman/README.md)
-
-    foo
+	[logman/README](https://github.com/a1publishing/logman/README.md)
