@@ -2,9 +2,7 @@
 
 #
 $lom = 'H:\dev\_env\py\dev\20241115_a1_loggermanager'
-$loml = "$lom\a1_loggermanager"
-$lom_repo = 'S:\repo\users\michaelf\dev\py\pkg\a1_loggermanager'
-cd $loml
+cd $lom
 
 #
 python eg\example.py

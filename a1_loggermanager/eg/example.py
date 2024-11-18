@@ -42,10 +42,16 @@ my_logger_parms = ({
   'handler_names': ('default_streamhandler',)
 })
 logger_manager.add_my_logger(my_logger_parms)
-logger2 = logger_manager.get_my_logger('logger2')
-logger2.info('Created `logger2`?')       
-logger2.set_level('info')
+
+
+# TODO: when reporting format filename my_logger reports itself.  ITM, just use `my_logger.logger`` 
+#logger2 = logger_manager.get_my_logger('logger2')
+#logger2.info('Created `logger2`?')       
+#logger2.set_level('info')
+logger2 = logger_manager.get_my_logger('logger2').logger
+logger2.setLevel('INFO')
 logger2.info('Created `logger2`!')
+
 
 # get path command line parameter if supplied
 parser = argparse.ArgumentParser()
@@ -57,7 +63,13 @@ except:
     logger.error(f"parser error")
 # set logger2 level to debug if req'd
 if (args.debug):
-    logger2.set_level('debug')
+
+
+    #logger2.set_level('debug')
+    logger2.setLevel('DEBUG')
+
+
+
     logger2.info('Set `logger2` level to debug')
 # set file path if req'd otherwise use current dir
 if (args.path is not None):
@@ -94,11 +106,13 @@ myl = (
 logger_manager.add_my_loggers(myl)
 
 # get the file handler logger and log an entry
-file_logger = logger_manager.get_my_logger('file_logger')
+#file_logger = logger_manager.get_my_logger('file_logger')
+file_logger = logger_manager.get_my_logger('file_logger').logger
 file_logger.info('Created `file_logger`')
 
 # get the combined console and file handler logger and log an entry
-console_file_logger = logger_manager.get_my_logger('console_and_file_logger')
+#console_file_logger = logger_manager.get_my_logger('console_and_file_logger')
+console_file_logger = logger_manager.get_my_logger('console_and_file_logger').logger
 console_file_logger.info('Created `console_file_logger`')
 
 # add a rotating file handler and a timed rotating file handler
@@ -136,18 +150,21 @@ logger_manager.add_my_handlers(handlers)
 logger_manager.add_my_loggers(loggers)
 
 # get the loggers and log entries
-rf_logger = logger_manager.get_my_logger('rotating_file_1')
+#rf_logger = logger_manager.get_my_logger('rotating_file_1')
+rf_logger = logger_manager.get_my_logger('rotating_file_1').logger
 str = 'Created `rotating_file_1`'
 rf_logger.info(str)
 logger.info(str)
 'Created `timed_rotating_file_1`'
-rf_logger = logger_manager.get_my_logger('timed_rotating_file_1')
+#rf_logger = logger_manager.get_my_logger('timed_rotating_file_1')
+rf_logger = logger_manager.get_my_logger('timed_rotating_file_1').logger
 rf_logger.info(str)
 logger.info(str)
 
 
 ### accessing logging.logger, eg;
 
+"""
 # various filtering examples
   # filter out all but debug messages
 logger2.logger.addFilter(filter_debug) 
@@ -171,3 +188,27 @@ logger2.logger.addFilter(filter_out)
 logger2.logger.info("..foo..")
 logger2.logger.info("..bar..")
 logger2.logger.info("..blah..")
+"""
+# various filtering examples
+  # filter out all but debug messages
+logger2.addFilter(filter_debug) 
+logger2.debug("debug1")
+logger2.info("info1") 
+logger2.removeFilter(filter_debug)
+logger2.debug("debug2")
+logger2.info("info2") 
+  # filter only messages with filter string  
+global filter_str   # TODO: how to pass filter_str as argument to callback instead.  is it even poss.? 
+                    #   (suggestions please to mike@a1publishing.com :)
+filter_str = 'foo'
+logger2.addFilter(filter_only) 
+logger2.info("..foo..")
+logger2.info("..bar..")
+logger2.info("..blah..")
+  # filter out messages with filter string  
+logger2.removeFilter(filter_only)
+filter_str = 'blah'
+logger2.addFilter(filter_out) 
+logger2.info("..foo..")
+logger2.info("..bar..")
+logger2.info("..blah..")
