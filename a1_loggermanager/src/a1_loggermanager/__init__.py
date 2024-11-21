@@ -54,3 +54,10 @@ _logger_manager.add_my_formatters(myf)
 _logger_manager.add_my_handlers(myh)
 _logger_manager.add_my_loggers(myl)
 
+
+# KWIKFIX (20241121): this is a better use logger manager..
+# make available default logger
+# TODO: make available various default logger
+default_console_logger = _logger_manager.get_my_logger('default_console_logger').logger
+
+
